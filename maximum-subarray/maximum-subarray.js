@@ -3,7 +3,9 @@
  * @return {number}
  */
 var maxSubArray = function(nums) {
-
+    if (nums.length === 1 ){
+        return nums[0]
+    }
     
     let currentMaxNumber = nums[0]
     let maxSubArray = nums[0] 
