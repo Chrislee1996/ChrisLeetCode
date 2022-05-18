@@ -5,6 +5,42 @@
  */
 
 var twoSum = function(nums, target) {
+    let hashmap = {}
+    
+    for (let i = 0 ; i < nums.length; i++) {
+        let pairSum = target - nums[i]
+        if (hashmap[pairSum] !== undefined) {
+            return [i, hashmap[pairSum]]
+        } else {
+            hashmap[nums[i]] = i
+        }
+    }
+
+    
+    
+    
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   //   let result = []
   // for (let i =0; i< nums.length;i++){
   //     for (let j = i+1; j < nums.length;j ++) {
@@ -26,16 +62,14 @@ var twoSum = function(nums, target) {
     // }
 
     
-    let hashmap = {}
+//     let hashmap = {}
     
-    for (let i = 0 ; i < nums.length; i++) {
-        let values = nums[i]
-        let pairSum = target - values
-        if (hashmap[pairSum] !== undefined) {
-            return [hashmap[pairSum], i] 
-        } else {
-            hashmap[values] =i
-        }
-    }
-    
-};
+//     for (let i = 0 ; i < nums.length; i++) {
+//         let values = nums[i]
+//         let pairSum = target - values
+//         if (hashmap[pairSum] !== undefined) {
+//             return [hashmap[pairSum], i] 
+//         } else {
+//             hashmap[values] =i
+//         }
+//     }
