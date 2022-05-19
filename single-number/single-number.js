@@ -3,20 +3,30 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-    let hashmap = {}
+    let numberSet = new Set()
     
-    for (let i=0;i<nums.length;i++ ) {
-        hashmap[nums[i]] = hashmap[nums[i]] +1 || 1
-    }
-    
-    for (const value in hashmap) {
-        if (hashmap[value] === 1) {
-            return value
+    for (let i = 0; i < nums.length; i++) {
+        if (numberSet.has(nums[i])) {
+            numberSet.delete(nums[i])
+        } else {
+            numberSet.add(nums[i])
         }
     }
+    console.log(numberSet[0])
+    return Array.from(numberSet)
 };
 
-
+//     let hashmap = {}
+    
+//     for (let i=0;i<nums.length;i++ ) {
+//         hashmap[nums[i]] = hashmap[nums[i]] +1 || 1
+//     }
+    
+//     for (const value in hashmap) {
+//         if (hashmap[value] === 1) {
+//             return value
+//         }
+//     }
 
 
 //this will host our table of numbers ex. {1000 : 5} - number 1000 appears 5 times
