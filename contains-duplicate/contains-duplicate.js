@@ -22,7 +22,7 @@ var containsDuplicate = function(nums) {
 
     let numberSet = new Set()
     
-    for (let i =0 ; i < nums.length; i++) {
+    for (let i =0 ; i< nums.length ; i++) {
         if (!numberSet.has(nums[i])) {
             numberSet.add(nums[i])
         } else {
