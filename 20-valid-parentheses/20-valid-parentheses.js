@@ -4,30 +4,85 @@
  */
 var isValid = function(s) {
     
-        let hash = {
-            '(' : ')',
-            '[' : ']',
-            '{' : '}'
-        }
-
-        let stack = []
+    let hashmap = {
+                '(':')' , 
+                 '[':']' , 
+                 '{':'}' 
+                  }
     
-        
+    let stack = []
+    
     for (let char of s) {
-        if (hash[char]) {
-            stack.push(hash[char])
+        if (hashmap[char]) {
+            stack.push(hashmap[char])
         } else if (stack.length > 0 && stack[stack.length-1] === char) {
-            stack.pop()
+            stack.pop(hashmap[char])
         } else {
             return false
         }
     }
     return stack.length === 0
-        
 }
     
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
