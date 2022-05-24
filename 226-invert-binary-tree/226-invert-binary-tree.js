@@ -15,6 +15,7 @@ var invertTree = function(root) {
         return null
     }
     
+    
     let tempLeft = invertTree(root.left)
     let tempRight = invertTree(root.right)
     
@@ -39,6 +40,21 @@ var invertTree = function(root) {
 
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
