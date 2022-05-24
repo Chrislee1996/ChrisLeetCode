@@ -12,9 +12,10 @@
  */
 var invertTree = function(root) {
     if (root === null) {
-        return null
+        return root
     }
     
+ 
     
     let tempLeft = invertTree(root.left)
     let tempRight = invertTree(root.right)
