@@ -26,7 +26,7 @@ var solution = function(isBadVersion) {
             if (!isBadVersion(mid)) {
                 leftPointer = mid + 1
             } else {
-                rightPointer = mid -1 
+                rightPointer = mid - 1 
             }
         }
         return leftPointer
