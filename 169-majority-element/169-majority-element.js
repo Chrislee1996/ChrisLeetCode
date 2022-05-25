@@ -7,6 +7,7 @@ var majorityElement = function(nums) {
     
     for (let i = 0 ; i < nums.length ; i++) {
         let char = nums[i]
+        
         if (!map[char]) {
             map[char] = 1
         } else {
@@ -14,10 +15,9 @@ var majorityElement = function(nums) {
         }
     }
     
-
-     for (let key in map) {
-         if (map[key] > Math.floor(nums.length/2)) {
-             return key
-         } 
-     }
+    for (let key in map) {
+        if (map[key] > Math.floor(nums.length/2)) {
+            return key
+        }
+    }
 };
