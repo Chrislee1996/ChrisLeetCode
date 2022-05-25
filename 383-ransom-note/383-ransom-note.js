@@ -9,21 +9,21 @@ var canConstruct = function(ransomNote, magazine) {
     
     
     for (let i = 0 ; i< magazine.length;i++) {
-        let char = magazine[i]
+        let firstString = magazine[i]
         
-        if (!hashmap[char]) {
-            hashmap[char] =1 
+        if (!hashmap[firstString]) {
+            hashmap[firstString] =1 
         } else {
-            hashmap[char] ++
+            hashmap[firstString] ++
         }
     }
     
     for (let j = 0 ; j < ransomNote.length;j++) {
-        let char = ransomNote[j]
-        if (!hashmap[char]) {
+        let secondString = ransomNote[j]
+        if (!hashmap[secondString]) {
             return false
         } else {
-            hashmap[char]--
+            hashmap[secondString]--
         }
     }
     return true
