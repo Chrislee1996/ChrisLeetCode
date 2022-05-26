@@ -16,13 +16,18 @@ var longestPalindrome = function(s) {
             hashmap[char]++
         }
         
-    
         if(hashmap[char]%2==0){
                 result+=hashmap[char]
                 hashmap[char]=0
             }
         }
 
-        return result < s.length ? result+1 : result
+
+    
+        if (result < s.length) {
+            return result +1
+        } else {
+            return result
+        }
 
 };
