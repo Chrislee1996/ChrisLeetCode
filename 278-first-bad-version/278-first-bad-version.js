@@ -22,11 +22,11 @@ var solution = function(isBadVersion) {
         let rightPointer = n
         
         while(leftPointer <= rightPointer) {
-            let middle = Math.floor(( leftPointer + rightPointer) / 2)
+            let middle = Math.floor((leftPointer + rightPointer) / 2)
             if (!isBadVersion(middle)) {
                 leftPointer = middle + 1
             } else {
-                rightPointer = middle - 1
+                rightPointer = middle -1
             }
         }
         return leftPointer
