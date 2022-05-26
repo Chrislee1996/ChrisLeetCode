@@ -7,23 +7,22 @@ var canConstruct = function(ransomNote, magazine) {
     
     let hashmap = {}
     
-    for (let i = 0 ; i < magazine.length ; i++) {
-        let firstStringCharacter = magazine[i]
-        if (!hashmap[firstStringCharacter]) {
-            hashmap[firstStringCharacter] = 1
+    for (let i = 0 ; i < magazine.length; i ++) {
+        let char = magazine[i]
+        if (!hashmap[char]) {
+            hashmap[char] = 1
         } else {
-            hashmap[firstStringCharacter]++
+            hashmap[char]++
         }
     }
     
-    for (let i = 0 ; i < ransomNote.length; i++) {
-        let secondStringCharacter = ransomNote[i]
-        if (!hashmap[secondStringCharacter]) {
+    for (let i = 0 ; i<ransomNote.length ; i++) {
+        let charRansomNote = ransomNote[i]
+        if (!hashmap[charRansomNote]) {
             return false
         } else {
-            hashmap[secondStringCharacter] --
+            hashmap[charRansomNote]--
         }
     }
     return true
-}
-    
+};
