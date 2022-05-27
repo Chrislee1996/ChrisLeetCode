@@ -14,8 +14,9 @@ var OrderedStream = function(n) {
 OrderedStream.prototype.insert = function(idKey, value) {
     let stack = []
     this.hashmap[idKey] = value
+    
     while (this.hashmap[this.pointer]) {
-        stack.push(this.hashmap[this.pointer])
+        stack.push(this.hashmap[this.pointer]) 
         this.pointer++
     }
     return stack
