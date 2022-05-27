@@ -10,7 +10,7 @@ var removeDuplicates = function(s, k) {
     for (let i = 0 ; i < s.length ; i++) {
         let char = s[i]
         let peek = stack[stack.length-1]
-        
+
         if (stack.length === 0 || peek[0] !== char) {
             stack.push([char, 1])
         } else {
