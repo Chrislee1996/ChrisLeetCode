@@ -2,7 +2,7 @@
  * @param {number} n
  */
 var OrderedStream = function(n) {
-    this.pointer = 1
+    this.pointerOne = 1
     this.hashmap = {}
 };
 
@@ -15,9 +15,9 @@ OrderedStream.prototype.insert = function(idKey, value) {
     let stack = []
     this.hashmap[idKey] = value
     
-    while (this.hashmap[this.pointer]) {
-        stack.push(this.hashmap[this.pointer]) 
-        this.pointer++
+    while(this.hashmap[this.pointerOne]) {
+        stack.push(this.hashmap[this.pointerOne]) 
+        this.pointerOne++
     }
     return stack
 };
@@ -27,3 +27,6 @@ OrderedStream.prototype.insert = function(idKey, value) {
  * var obj = new OrderedStream(n)
  * var param_1 = obj.insert(idKey,value)
  */
+
+
+
