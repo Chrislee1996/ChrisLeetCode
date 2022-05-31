@@ -13,12 +13,12 @@ var invalidTransactions = function(transactions) {
             continue
         }
         for (let j = 0; j < transactions.length; j++) {
-            if (j !== i) {
+            // if (j !== i) {
                 let [name1, time1, amount1, city1] = transactions[j].split(",");
                  if (name1==name && Math.abs(time1-time)<=60 && city!==city1){
                     result.push(transactions[i]);
                     break
-                }
+                // }
             }
         }    
     }
