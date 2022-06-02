@@ -7,4 +7,5 @@ var sortedSquares = function(nums) {
         nums[i] *= nums[i] 
     }
     return nums.sort((a,b) => a-b);
+    console.log(nums)
 }; 
