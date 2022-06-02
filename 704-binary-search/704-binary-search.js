@@ -4,17 +4,17 @@
  * @return {number}
  */
 var search = function(nums, target) {
-     let pointerOne = 0
-    let pointerTwo = nums.length-1
+    let leftPointer = 0
+    let rightPointer = nums.length-1
     
-    while(pointerOne <= pointerTwo) {
-        let middle = Math.floor((pointerOne + pointerTwo) / 2)
+    while (leftPointer <= rightPointer) {
+        let middle = Math.floor((leftPointer + rightPointer) / 2)
         if (nums[middle] === target) {
             return middle
         } else if (target < nums[middle]) {
-            pointerTwo = middle - 1
+            rightPointer = middle - 1 
         } else {
-            pointerOne = middle + 1
+            leftPointer = middle + 1
         }
     }
     return -1
