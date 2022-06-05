@@ -22,7 +22,7 @@ var removeNthFromEnd = function(head, n) {
         n--
     }
     
-    while (fastPointer) {
+    while (fastPointer !== null) {
         slowPointer = slowPointer.next
         fastPointer = fastPointer.next
         
