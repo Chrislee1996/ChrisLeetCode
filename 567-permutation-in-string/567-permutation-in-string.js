@@ -13,16 +13,7 @@ var checkInclusion = function(s1, s2) {
         return false
     }
     
-    // for (let i = 0 ; i < s1.length; i++) {
-    //     let char = s1[i]
-    //     if (!hashmap[char]) {
-    //         hashmap[char] = 0
-    //     } else {
-    //         hashmap[char]++
-    //     }
-    // }
-    
-        for (let i = 0 ; i < s1.length; i++) {
+    for (let i = 0 ; i < s1.length; i++) {
         let char = s1[i]
         if (!hashmap[char]) {
             hashmap[char] = 1
@@ -30,6 +21,15 @@ var checkInclusion = function(s1, s2) {
             hashmap[char]++
         }
     }
+    
+    //     for (let i = 0 ; i < s1.length; i++) {
+    //     let char = s1[i]
+    //     if (!hashmap[char]) {
+    //         hashmap[char] = 1
+    //     } else {
+    //         hashmap[char]++
+    //     }
+    // }
     
     
     while (pointerRight < s2.length) {
