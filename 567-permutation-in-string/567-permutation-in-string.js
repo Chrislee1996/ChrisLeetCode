@@ -22,14 +22,6 @@ var checkInclusion = function(s1, s2) {
         }
     }
     
-    //     for (let i = 0 ; i < s1.length; i++) {
-    //     let char = s1[i]
-    //     if (!hashmap[char]) {
-    //         hashmap[char] = 1
-    //     } else {
-    //         hashmap[char]++
-    //     }
-    // }
     
     
     while (pointerRight < s2.length) {
