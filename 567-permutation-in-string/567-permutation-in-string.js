@@ -22,11 +22,15 @@ var checkInclusion = function(s1, s2) {
     //     }
     // }
     
-    	for (let i = 0; i < s1.length; i++) {
-		// Initially neededChar[s1[i]] will be undefined and
-		// undefined || 0 will return 0. So we increment it by 1
-		hashmap[s1[i]] = (hashmap[s1[i]] || 0) + 1;
-	}
+        for (let i = 0 ; i < s1.length; i++) {
+        let char = s1[i]
+        if (!hashmap[char]) {
+            hashmap[char] = 1
+        } else {
+            hashmap[char]++
+        }
+    }
+    
     
     while (pointerRight < s2.length) {
         if (hashmap[s2[pointerRight]] > 0) {
