@@ -11,10 +11,6 @@
  * @return {ListNode}
  */
 var removeElements = function(head, val) {
-    if (head === null) {
-        return null
-    }
-    
     let dummyNode = new ListNode(0)
     dummyNode.next = head
     head = dummyNode
@@ -27,4 +23,4 @@ var removeElements = function(head, val) {
         }
     }
     return head.next
-}; 
+};
