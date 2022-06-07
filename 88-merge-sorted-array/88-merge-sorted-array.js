@@ -7,6 +7,7 @@
  */
 var merge = function(nums1, m, nums2, n) {
    let pointerOne = m - 1
+  
    let pointerTwo = n - 1
    
    
