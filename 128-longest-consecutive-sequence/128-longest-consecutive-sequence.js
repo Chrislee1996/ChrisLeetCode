@@ -5,8 +5,11 @@
 var longestConsecutive = function(nums) {
     let set = new Set()
     
-    for (let num of nums) {
-        set.add(num)
+
+    
+    for (let i = 0 ; i < nums.length;i++) {
+        let number = nums[i]
+        set.add(number)
     }
     
     let longestStreak = 0
