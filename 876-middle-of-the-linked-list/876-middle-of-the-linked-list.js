@@ -10,9 +10,14 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
+    
+    if (head === null) {
+        return null
+    }
+    
     let slowPointer = head
     let fastPointer = head
-    while (fastPointer && fastPointer.next) {
+    while (fastPointer !== null && fastPointer.next !== null) {
         slowPointer = slowPointer.next
         fastPointer = fastPointer.next.next
     }
