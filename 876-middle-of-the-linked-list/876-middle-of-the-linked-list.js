@@ -11,9 +11,9 @@
  */
 var middleNode = function(head) {
     
-    if (head === null) {
-        return null
-    }
+    // if (head === null) {
+    //     return null
+    // }
     
     let slowPointer = head
     let fastPointer = head
