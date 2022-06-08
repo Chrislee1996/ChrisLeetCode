@@ -11,12 +11,12 @@
  */
 var deleteDuplicates = function(head) {
     
-    if (head === null) {
-        return null
-    }
+    // if (head === null) {
+    //     return null
+    // }
     
     let pointerOne = head
-    while (pointerOne.next !== null) {
+    while (pointerOne !== null && pointerOne.next !== null) {
         if (pointerOne.val === pointerOne.next.val) {
             pointerOne.next = pointerOne.next.next
         } else {
