@@ -12,8 +12,8 @@ var lengthOfLongestSubstring = function(s) {
     while (rightPointer < s.length) {
         if (!set.has(s.charAt(rightPointer))) {
             set.add(s.charAt(rightPointer))
-            subStringLength = Math.max(subStringLength, set.size)
             rightPointer++
+            subStringLength = Math.max(subStringLength, set.size)
         } else {
             set.delete(s.charAt(leftPointer))
             leftPointer++
