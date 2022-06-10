@@ -15,19 +15,35 @@ var postorderTraversal = function(root) {
         return []
     }
     let stack = []
-    let res = [];
-    stack.push(root);
-    while (stack.length) {
-        let node = stack[stack.length-1];
+    let result = [];
+    let pointerOne = root
+    stack.push(pointerOne)
+
+    while(stack.length) {
+        let node = stack[stack.length-1]
         if (node.left) {
-            stack.push(node.left);
-            node.left = null;
+            stack.push(node.left)
+            node.left = null
+        } else if (node.right) {
+            stack.push(node.right)
+            node.right = null
         }
-        else if (node.right) {
-            stack.push(node.right);
-            node.right = null;
-        }
-        else res.push(stack.pop().val);
+        else result.push(stack.pop().val)
     }
-    return res;
+    return result
+    
+    // stack.push(root);
+    // while (stack.length) {
+    //     let node = stack[stack.length-1];
+    //     if (node.left) {
+    //         stack.push(node.left);
+    //         node.left = null;
+    //     }
+    //     else if (node.right) {
+    //         stack.push(node.right);
+    //         node.right = null;
+    //     }
+    //     else res.push(stack.pop().val);
+    // }
+    // return res;
 };
