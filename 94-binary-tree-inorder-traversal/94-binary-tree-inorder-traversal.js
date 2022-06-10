@@ -12,16 +12,17 @@
  */
 var inorderTraversal = function(root) {
     const stack = [];
-  const res = [];
+    const res = [];
+    let pointerOne = root
 
-  while (root || stack.length) {
-    if (root) {
-      stack.push(root);
-      root = root.left;
+  while (pointerOne || stack.length) {
+    if (pointerOne) {
+      stack.push(pointerOne);
+      pointerOne = pointerOne.left;
     } else {
-      root = stack.pop();
-      res.push(root.val);
-      root = root.right;
+      pointerOne = stack.pop();
+      res.push(pointerOne.val);
+      pointerOne = pointerOne.right;
     }
   }
 
