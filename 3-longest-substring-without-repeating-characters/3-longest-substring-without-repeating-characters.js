@@ -4,20 +4,20 @@
  */
 var lengthOfLongestSubstring = function(s) {
     let set = new Set()
-    let leftPointer = 0
-    let rightPointer = 0
+    let fastPointer = 0
+    let slowPointer = 0
     
-    let subStringLength = 0
+    let longestSubstring = 0
     
-    while (rightPointer < s.length) {
-        if (!set.has(s.charAt(rightPointer))) {
-            set.add(s.charAt(rightPointer))
-            rightPointer++
-            subStringLength = Math.max(subStringLength, set.size)
+    while (fastPointer < s.length) {
+        if (!set.has(s.charAt(fastPointer))) {
+            set.add(s.charAt(fastPointer))
+            fastPointer++
+            longestSubstring = Math.max(longestSubstring, set.size)
         } else {
-            set.delete(s.charAt(leftPointer))
-            leftPointer++
+            set.delete(s.charAt(slowPointer))
+            slowPointer++
         }
     }
-    return subStringLength
+    return longestSubstring
 };
