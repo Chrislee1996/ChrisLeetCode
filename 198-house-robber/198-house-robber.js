@@ -13,7 +13,7 @@ var rob = function(nums) {
     
     let robbedTotal = []
     robbedTotal[0] = nums[0]
-    robbedTotal[1] = Math.max(nums[0], nums[1])
+    robbedTotal[1] = Math.max(robbedTotal[0], nums[1])
     
     for (let i = 2; i < nums.length; i++) {
         robbedTotal[i] = Math.max(robbedTotal[i-1] , robbedTotal[i-2] + nums[i])
