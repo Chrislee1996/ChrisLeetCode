@@ -26,4 +26,16 @@ var preorderTraversal = function(root) {
         if (node.left !== null) stack.push(node.left)
     }
     return result
+    
+    
+//     let queue = [root]
+//     let result = []
+//     while(queue.length > 0) {
+//         const node = queue.shift()
+//         result.push(node.val)
+        
+//         if (node.left !==null) queue.push(node.left)
+//         if (node.right !==null) queue.push(node.right) 
+//     }
+//     return result
 };
