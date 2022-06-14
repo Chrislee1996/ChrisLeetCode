@@ -16,7 +16,7 @@ var inorderTraversal = function(root) {
     let pointerOne = root
 
   while (pointerOne !== null || stack.length > 0) {
-    if (pointerOne) {
+    if (pointerOne !== null) {
       stack.push(pointerOne);
       pointerOne = pointerOne.left;
     } else {
