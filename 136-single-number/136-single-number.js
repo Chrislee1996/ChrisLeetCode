@@ -3,26 +3,14 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-//     let numberSet = new Set()
+        let hashmap = {}
     
-//     for (let i = 0 ; i < nums.length; i++) {
-//         if (numberSet.has(nums[i])) {
-//             numberSet.delete(nums[i])
-//         } else {
-//             numberSet.add(nums[i])
-//         }
-//     }
-//     return Array.from(numberSet)
-    
-    
-    let hashmap = {}
-    
-    for (let i = 0 ; i < nums.length; i++) {
-        let values = nums[i]
-        if (!hashmap[values]) {
-            hashmap[values] = 1
+    for (let i = 0 ; i<nums.length;i++) {
+        let char = nums[i]
+        if (!hashmap[char]) {
+            hashmap[char] = 1
         } else {
-            hashmap[values]++
+            hashmap[char]++
         }
     }
     
@@ -32,7 +20,3 @@ var singleNumber = function(nums) {
         }
     }
 };
-
-
-
-
