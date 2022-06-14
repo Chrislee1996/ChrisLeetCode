@@ -16,9 +16,6 @@ var findTarget = function(root, k) {
         return false
     }
     
-    if (!root === null) {
-        return false;
-    } 
       const set = new Set();
       const stack = [root];
       while (stack.length > 0) {
