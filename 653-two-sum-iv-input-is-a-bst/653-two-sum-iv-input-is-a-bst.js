@@ -24,9 +24,8 @@ var findTarget = function(root, k) {
             return true;
         }
         set.add(node.val);
-                  if (node.left) stack.push(node.left);
-
         if (node.right) stack.push(node.right);
+        if (node.left) stack.push(node.left);
       }
       return false;
 
