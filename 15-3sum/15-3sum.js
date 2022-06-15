@@ -38,7 +38,7 @@ const results = []
 			} else if (sum < target) {
 				j++
 
-			} else { // (sum > target)
+			} else {
 				k--
 			}
 		}
