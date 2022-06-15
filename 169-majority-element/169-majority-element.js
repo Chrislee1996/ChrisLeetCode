@@ -4,9 +4,7 @@
  */
 var majorityElement = function(nums) {
     let hashmap = {}
-    
-    for (let i = 0 ; i < nums.length ; i++) {
-        let char = nums[i]
+    for (let char of nums) {
         if (!hashmap[char]) {
             hashmap[char] = 1
         } else {
@@ -15,9 +13,8 @@ var majorityElement = function(nums) {
     }
     
     for (let values in hashmap) {
-        if(hashmap[values] > Math.floor(nums.length) / 2) {
+        if (hashmap[values] > nums.length/2) {
             return values
         }
     }
-    
 };
