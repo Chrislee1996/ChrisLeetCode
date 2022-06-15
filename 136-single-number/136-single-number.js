@@ -3,14 +3,13 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-        let hashmap = {}
-    
-    for (let i = 0 ; i<nums.length;i++) {
+    let hashmap = {}
+    for (let i = 0; i < nums.length;i++){
         let char = nums[i]
         if (!hashmap[char]) {
-            hashmap[char] = 1
+            hashmap[char] =1 
         } else {
-            hashmap[char]++
+            hashmap[char] ++
         }
     }
     
