@@ -16,8 +16,7 @@ var threeSum = function(nums) {
       break;
     }
 
-    if (i > 0 && nums[i - 1] === nums[i]) {
-      // If they're the same, skip this iteration
+    if (nums[i - 1] === nums[i]) {
       continue;
     }
 
