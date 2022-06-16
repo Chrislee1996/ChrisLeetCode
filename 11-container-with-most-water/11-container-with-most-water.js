@@ -8,9 +8,9 @@ var maxArea = function(height) {
     let leftPointer = 0
     let rightPointer = height.length-1
     
-    while (leftPointer < rightPointer) {
-        let area = Math.min(height[leftPointer], height[rightPointer]) * (rightPointer - leftPointer) 
-        result = Math.max(result, area)
+    while ( leftPointer < rightPointer) {
+        let area = (rightPointer - leftPointer) * Math.min(height[leftPointer], height[rightPointer])
+        result = Math.max(area,result)
         
         if (height[leftPointer] < height[rightPointer]) {
             leftPointer++
