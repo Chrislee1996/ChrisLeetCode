@@ -3,17 +3,18 @@
  * @return {string[][]}
  */
 var groupAnagrams = function(strs) {
-    let hashmap = {}
+    const hashmap = {}
     
-    for (let i = 0 ; i < strs.length;i++){
-        let chars = strs[i]
-        
-        const sortedArray = chars.split('').sort().join('')
-        // console.log(sortedArray)
+    for (let i = 0 ; i < strs.length ; i++) {
+        // let char = strs[i]
+        let sortedArray = strs[i].split('').sort().join('')
         if (!hashmap[sortedArray]) {
-            hashmap[sortedArray] = [chars]
+
+            hashmap[sortedArray] = [strs[i]]
+                        console.log(hashmap[sortedArray])
+
         } else {
-            hashmap[sortedArray].push(chars)
+            hashmap[sortedArray].push(strs[i])
         }
     }
     return Object.values(hashmap)
