@@ -4,10 +4,12 @@
  */
 var longestConsecutive = function(nums) {
     let set = new Set()
-    let longestSequence = 0
+    
     for (let num of nums) {
         set.add(num)
     }
+    
+    let longestStreak = 0
     
     for (let num of nums) {
         if (!set.has(num - 1)) {
@@ -18,8 +20,8 @@ var longestConsecutive = function(nums) {
                 currentStreak +=1 
                 currentNumber +=1
             }
-            longestSequence = Math.max(currentStreak, longestSequence)
+            longestStreak = Math.max(currentStreak , longestStreak)
         }
     }
-    return longestSequence
+    return longestStreak
 };
