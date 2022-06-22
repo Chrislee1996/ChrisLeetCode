@@ -11,46 +11,24 @@
  * @return {number[][]}
  */
 var levelOrder = function(root) {
-    
     if (root === null) {
         return []
     }
     
+    let result = []
     let queue = []
     queue.push(root)
-    let result = []
     
     while (queue.length > 0) {
-        let length = queue.length
-        let treeLevel = []
-        for (let i = 0 ; i < length;i++) {
-        const node = queue.shift()
-        treeLevel.push(node.val)
-        if (node.left !== null) queue.push(node.left)
-        if (node.right !== null) queue.push(node.right)
+        let treeLength = queue.length
+        let levelArray = []
+        for (let i = 0 ; i < treeLength;i++) {
+            const node = queue.shift()
+            levelArray.push(node.val)
+            if (node.left !== null) queue.push(node.left)
+            if (node.right !== null) queue.push(node.right)
         }
-        result.push(treeLevel)
+        result.push(levelArray)
     }
     return result
 };
-
-
-
-// var levelOrder = function(root) {
-//     if (root == null) return [];
-//     let queue = [], values = [];
-//     queue.push(root);
-//     while (queue.length > 0) {
-//         let len = queue.length, level = [];
-//         for (let i = 0; i < len; i++) {
-//             let node = queue.shift();
-//             level.push(node.val);
-//             if (node.left) queue.push(node.left);
-//             if (node.right) queue.push(node.right);
-//         }
-//         values.push(level);
-//     }
-//     return values;
-//     // Time Complexity: O(n)
-//     // Space Complexity: O(n)
-// };
