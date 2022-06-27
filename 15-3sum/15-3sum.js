@@ -18,7 +18,7 @@ var threeSum = function(nums) {
             break
         }
         
-        if (i > 0 && nums[i] === nums[i-1]) {
+        if (nums[i] === nums[i-1]) {
             continue
         }
         
