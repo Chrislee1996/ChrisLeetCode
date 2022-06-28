@@ -8,22 +8,22 @@ var search = function(nums, target) {
     let rightPointer = nums.length-1
     
     while(leftPointer <= rightPointer) {
-        let middle = Math.floor((leftPointer + rightPointer)/2)
+        let middle = Math.floor((leftPointer + rightPointer) / 2) 
         if (nums[middle] === target) {
             return middle
         }
-        
+        //if leftside if sorted, then 
         if (nums[leftPointer] <= nums[middle]) {
-            if (nums[leftPointer] <= target && nums[middle] >= target) {
-                rightPointer = middle - 1
+            if (nums[middle] >= target && nums[leftPointer] <= target) {
+            rightPointer = middle -1 
             } else {
-                leftPointer = middle + 1
+                leftPointer = middle +1
             }
         } else {
-            if (nums[middle] <= target && target <= nums[rightPointer]) {
-                leftPointer = middle + 1
+            if (nums[middle] <= target && nums[rightPointer] >= target) {
+                leftPointer = middle +1 
             } else {
-                rightPointer = middle - 1
+                rightPointer = middle -1
             }
         }
     }
