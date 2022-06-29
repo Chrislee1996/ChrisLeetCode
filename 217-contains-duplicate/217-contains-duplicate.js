@@ -25,8 +25,7 @@ var containsDuplicate = function(nums) {
         if(set.has(num)) {
             return true
         }
-                set.add(num)
-
+        set.add(num)
     }
     return false
 };
