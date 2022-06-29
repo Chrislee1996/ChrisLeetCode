@@ -11,9 +11,9 @@ var searchInsert = function(nums, target) {
         if (nums[middle] === target) {
             return middle
         } else if (nums[middle] < target ) {
-            leftPointer = middle + 1
+            leftPointer++
         } else {
-            rightPointer = middle -1 
+            rightPointer--
         }
     }
     return leftPointer
