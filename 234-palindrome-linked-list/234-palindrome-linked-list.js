@@ -10,16 +10,17 @@
  * @return {boolean}
  */
 var isPalindrome = function(head) {
-    let fastPointer = head
     let slowPointer = head
+    let fastPointer = head
     
-    while(fastPointer !==null && fastPointer.next !== null) {
+    while(fastPointer !== null && fastPointer.next !== null) {
         slowPointer = slowPointer.next
         fastPointer = fastPointer.next.next
     }
     
     fastPointer = head
     slowPointer = reverse(slowPointer)
+    
     
     while (slowPointer !== null) {
         if (slowPointer.val !== fastPointer.val) {
@@ -29,27 +30,25 @@ var isPalindrome = function(head) {
         fastPointer = fastPointer.next
     }
     return true
+    
 };
 
 const reverse = (head) => {
-    let previousHead = null
-    let current = head
-    while(current !== null) {
-        let next = current.next
-        current.next = previousHead
-        previousHead = current
-        current = next
+    let previousNode = null
+    let currentNode = head
+    while (currentNode !== null) {
+        const next = currentNode.next
+        currentNode.next = previousNode
+        previousNode = currentNode
+        currentNode = next
     }
-    return previousHead
+    return previousNode
 }
 
-//1 2 2 1
-//^ ^
-//1 1 2 2 1 1
-//    ^ ^
-//1 2 2 2 2 1
-//^ ^
 
+//      2   ->   1    -> null
 
-//n -> 2 -> 1 -> n
-//P    C    N
+// null <-   2 <- 1   -> null
+//                P   C         N   
+
+//      1   ->   2    -> null
