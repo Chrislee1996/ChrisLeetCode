@@ -11,7 +11,7 @@ var merge = function(intervals) {
     
     for (let values of intervals) {
         let lastEnd = result[result.length-1]
-        if (lastEnd[1] >= values[0]) {
+        if ( values[0] <= lastEnd[1]) {
             lastEnd[1] = Math.max(lastEnd[1] , values[1])
         } else {
             result.push(values)
