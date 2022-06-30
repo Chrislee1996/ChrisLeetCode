@@ -9,7 +9,7 @@ var merge = function(nums1, m, nums2, n) {
     let pointerOne = m - 1
     let pointerTwo = n - 1
     
-    for (let i = m + n - 1; i >= 0; i--) {
+    for (let i = m + n - 1 ; i >= 0 ; i--) {
         if (pointerTwo < 0 ) {
             break
         }
