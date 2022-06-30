@@ -16,3 +16,12 @@ var findMin = function(nums) {
     }
     return nums[leftPointer]
 };
+
+
+
+
+
+//11 --- 13 --- 14 ---- 15 --- 17
+//L             M              R
+//              
+//14 > 17? FALSE
