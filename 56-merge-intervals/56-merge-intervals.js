@@ -9,12 +9,15 @@ var merge = function(intervals) {
     intervals.sort((a,b) => a[0] - b[0])
     let result = [intervals[0]]
     
-    for (let values of intervals) {
-        let lastEnd = result[result.length-1]
-        if ( values[0] <= lastEnd[1]) {
-            lastEnd[1] = Math.max(lastEnd[1] , values[1])
+    for (let interval of intervals) {
+        let endOne = result[result.length-1][1]
+        let startTwo = interval[0]
+        let endTwo = interval[1]
+        
+        if (endOne >= startTwo) {
+            result[result.length-1][1] = Math.max(endOne, endTwo)
         } else {
-            result.push(values)
+            result.push(interval)
         }
     }
     return result
