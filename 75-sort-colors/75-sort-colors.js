@@ -4,47 +4,57 @@
  */
 var sortColors = function(nums) {
     
+
+    
     let leftPointer = 0
+        let index = 0
     let rightPointer = nums.length-1
-    for(let i = 0 ; i <= rightPointer;i++) {
-        if (nums[i] === 0) {
-            swap(nums, leftPointer, i)
+    while(index <= rightPointer) {
+        if (nums[index] === 0 ) {
+            swap(leftPointer, index)
+            index++
             leftPointer++
-        } else if (nums[i] === 2) {
-            swap(nums, i , rightPointer)
+        } 
+        else if (nums[index] === 1) {
+            index++
+        } else if (nums[index] === 2) {
+            swap(index, rightPointer)
             rightPointer--
-            i--
         }
     }
     
-};
-
-const swap = (arr, leftPointer, rightPointer) => {
-    [arr[leftPointer], arr[rightPointer]] = [arr[rightPointer], arr[leftPointer]]
+    function swap(a,b) {
+        [nums[b], nums[a]] = [nums[a], nums[b]]
+    }
 }
 
 
 
-//     if (nums === null || nums.length === 0) {
-//         return;
-//     }
-//     let idx1 = 0, idx2 = nums.length - 1;
-//     for (let i = 0; i <= idx2; i++) {
-//         if (nums[i] === 0) {
-//             swap(nums, idx1, i);
-//             idx1++;
-//         } else if (nums[i] === 2) {
-//             swap(nums, i, idx2);
-//             idx2--;
-//             // we want to check on the swapped element because
-//             // it could be 2
-//             i--;
-//         }
-//     }
-//     // T.C: O(N)
-//     // S.C: O(1)
-// };
+//     let low=0, mid=0, high=arr.length-1
 
-// const swap = (arr, idx1, idx2) => {
-//     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
-// }
+
+//     while ( mid <= high ) { 
+    
+//         if( arr[mid] == 0 ){ 
+//             swap( low, mid ); 
+//             mid++; 
+//             low++ ;
+//         } 
+    
+//         else if( arr[mid] == 1 ) {   
+//             mid++ ;  
+//         } 
+
+
+//         else if( arr[mid] == 2 ) {
+//             swap( mid,high ); 
+//             high--  
+//         } 
+//     }
+
+
+//     function swap(a,b) {
+//         [arr[b], arr[a]] = [arr[a], arr[b]]
+//     }
+
+
