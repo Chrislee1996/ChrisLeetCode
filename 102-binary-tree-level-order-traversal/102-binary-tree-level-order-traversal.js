@@ -15,20 +15,20 @@ var levelOrder = function(root) {
         return []
     }
     
-    let result = []
+    let result =[]
     let queue = []
     queue.push(root)
     
     while (queue.length > 0) {
-        let treeLength = queue.length
-        let levelArray = []
-        for (let i = 0 ; i < treeLength;i++) {
-            const node = queue.shift()
-            levelArray.push(node.val)
+        let treeLevel = queue.length
+        let treeValues = []
+        for (let i = 0 ; i < treeLevel; i++) {
+            let node = queue.shift()
+            treeValues.push(node.val)
             if (node.left !== null) queue.push(node.left)
             if (node.right !== null) queue.push(node.right)
         }
-        result.push(levelArray)
+        result.push(treeValues)
     }
     return result
 };
