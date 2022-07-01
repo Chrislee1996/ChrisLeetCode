@@ -4,57 +4,28 @@
  */
 var sortColors = function(nums) {
     
-
-    
-    let leftPointer = 0
-        let index = 0
+    let leftPointer = 0 
+    let indexPointer = 0
     let rightPointer = nums.length-1
-    while(index <= rightPointer) {
-        if (nums[index] === 0 ) {
-            swap(leftPointer, index)
-            index++
+
+    while(indexPointer <= rightPointer){
+        if (nums[indexPointer] === 0) {
+            swap(leftPointer, indexPointer)
             leftPointer++
-        } 
-        else if (nums[index] === 1) {
-            index++
-        } else if (nums[index] === 2) {
-            swap(index, rightPointer)
+            indexPointer++
+        } else if (nums[indexPointer] === 1) {
+            indexPointer++
+        } else if (nums[indexPointer] === 2) {
+            swap(indexPointer, rightPointer)
             rightPointer--
         }
     }
+
     
-    function swap(a,b) {
-        [nums[b], nums[a]] = [nums[a], nums[b]]
+    function swap (a,b) {
+        [nums[b] , nums[a]] = [nums[a], nums[b]]
     }
 }
 
-
-
-//     let low=0, mid=0, high=arr.length-1
-
-
-//     while ( mid <= high ) { 
-    
-//         if( arr[mid] == 0 ){ 
-//             swap( low, mid ); 
-//             mid++; 
-//             low++ ;
-//         } 
-    
-//         else if( arr[mid] == 1 ) {   
-//             mid++ ;  
-//         } 
-
-
-//         else if( arr[mid] == 2 ) {
-//             swap( mid,high ); 
-//             high--  
-//         } 
-//     }
-
-
-//     function swap(a,b) {
-//         [arr[b], arr[a]] = [arr[a], arr[b]]
-//     }
 
 
