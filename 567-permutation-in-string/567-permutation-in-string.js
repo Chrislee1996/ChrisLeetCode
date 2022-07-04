@@ -7,7 +7,6 @@ var checkInclusion = function(s1, s2) {
     let hashmap = {}
     let pointerLeft = 0
     let pointerRight = 0
-    let requiredLength = s1.length
     
     if (s1.length > s2.length) {
         return false
@@ -23,7 +22,7 @@ var checkInclusion = function(s1, s2) {
     }
     
     
-    
+    let requiredLength = s1.length
     while (pointerRight < s2.length) {
         if (hashmap[s2[pointerRight]] > 0) {
             requiredLength--
@@ -34,6 +33,7 @@ var checkInclusion = function(s1, s2) {
         if (requiredLength === 0) {
             return true
         }
+        
         
         if (pointerRight - pointerLeft ===s1.length) {
             if (hashmap[s2[pointerLeft]] >= 0 ) {
