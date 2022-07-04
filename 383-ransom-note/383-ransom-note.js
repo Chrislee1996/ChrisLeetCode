@@ -6,8 +6,7 @@
 var canConstruct = function(ransomNote, magazine) {
     let hashmap = {}
     
-    for (let i = 0 ; i < magazine.length; i++) {
-        let char = magazine[i]
+    for (let char of magazine) {
         if (!hashmap[char]) {
             hashmap[char] = 1
         } else {
@@ -15,14 +14,12 @@ var canConstruct = function(ransomNote, magazine) {
         }
     }
     
-    for (let i = 0 ; i < ransomNote.length; i++) {
-        let values = ransomNote[i]
-        if (hashmap[values]) {
-            hashmap[values]--
+    for (let value of ransomNote) {
+        if (hashmap[value]) {
+            hashmap[value]--
         } else {
             return false
         }
     }
-            return true
-
+    return true
 };
