@@ -13,12 +13,11 @@
 var hasCycle = function(head) {
     let slowPointer = head
     let fastPointer = head
-    
-    while (fastPointer !== null && fastPointer.next !== null) {
+    while(fastPointer !==null && fastPointer.next !== null) {
         slowPointer = slowPointer.next
         fastPointer = fastPointer.next.next
         
-        if (fastPointer === slowPointer) {
+        if (slowPointer === fastPointer) {
             return true
         }
     }
