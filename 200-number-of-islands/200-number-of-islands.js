@@ -20,17 +20,17 @@ var numIslands = function(grid) {
     return numberOfIsland
 };
 
-const getIslandCount = (grid, i , j) => {
+const getIslandCount = (grid, row , col) => {
     
-    if (i < 0 || i>=grid.length || j < 0 || j >=grid[0].length || grid[i][j] ==='0'  ) {
+    if (row < 0 || row >=grid.length || col < 0 || col >=grid[0].length || grid[row][col] ==='0'  ) {
         return 0
     }
     
-    grid[i][j] = '0'
-    getIslandCount(grid, i+1, j)
-    getIslandCount(grid, i-1, j)
-    getIslandCount(grid, i, j+1)
-    getIslandCount(grid, i, j-1)
+    grid[row][col] = '0'
+    getIslandCount(grid, row+1, col)
+    getIslandCount(grid, row-1, col)
+    getIslandCount(grid, row, col+1)
+    getIslandCount(grid, row, col-1)
 
     return 1
 }
