@@ -23,7 +23,7 @@ var numIslands = function(grid) {
 const getIslandCount = (grid, row , col) => {
     
     if (row < 0 || row >=grid.length || col < 0 || col >=grid[0].length || grid[row][col] ==='0'  ) {
-        return 0
+        return
     }
     
     grid[row][col] = '0'
