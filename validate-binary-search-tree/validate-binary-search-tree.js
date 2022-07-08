@@ -11,18 +11,16 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-    
-    
     return isValidHelper(root, -Infinity, Infinity)
 };
 
-const isValidHelper = (root, low, high) => {
-        if (root === null) {
-            return true
-        }
-        
-        return root.val > low && root.val < high &&
-            isValidHelper(root.left, low, root.val) &&
-            isValidHelper(root.right, root.val, high)
-        
+const isValidHelper = (root, low , high) => {
+    if (root === null) {
+        return true
     }
+    
+    return low < root.val && high > root.val &&
+        isValidHelper(root.left, low, root.val) &&
+        isValidHelper(root.right, root.val , high)
+    
+}
