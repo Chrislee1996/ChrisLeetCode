@@ -35,7 +35,9 @@ var postorderTraversal = function(root) {
     let result = []
     
     const helperFunc = (node) => {
-        if (!node) return;
+        if (node === null)  {
+            return
+        }
         helperFunc(node.left)
         helperFunc(node.right)
         result.push(node.val)
