@@ -19,7 +19,7 @@ const isValidHelper = (root, low , high) => {
         return true
     }
     
-    return low < root.val && high > root.val &&
+    return high > root.val && low < root.val &&
         isValidHelper(root.left, low, root.val) &&
         isValidHelper(root.right, root.val , high)
     
