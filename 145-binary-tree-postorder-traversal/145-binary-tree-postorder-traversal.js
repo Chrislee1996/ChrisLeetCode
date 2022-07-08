@@ -11,10 +11,10 @@
  * @return {number[]}
  */
 var postorderTraversal = function(root) {
-    // if (!root) {
-    //     return []
-    // }
-    // let stack = []
+//     if (!root) {
+//         return []
+//     }
+//     let stack = []
 //     let result = [];
 //     let pointerOne = root
 //     stack.push(pointerOne)
