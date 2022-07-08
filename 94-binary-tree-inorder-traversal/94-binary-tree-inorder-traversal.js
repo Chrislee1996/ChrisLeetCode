@@ -11,29 +11,38 @@
  * @return {number[]}
  */
 var inorderTraversal = function(root) {
-    const stack = [];
-    const res = [];
-    let pointerOne = root
+//     const stack = [];
+//     const res = [];
+//     let pointerOne = root
 
-  while (pointerOne !== null || stack.length > 0) {
-    if (pointerOne !== null) {
-      stack.push(pointerOne);
-      pointerOne = pointerOne.left;
-    } else {
-      pointerOne = stack.pop();
-      res.push(pointerOne.val);
-      pointerOne = pointerOne.right;
-    }
-  }
-
-  return res;
-//     const helperFunc = (node) =>{
-//         if (!node) return;
-//         helperFunc(node.left)
-//         stack.push(node.val)
-//         helperFunc(node.right)
+//   while (pointerOne !== null || stack.length > 0) {
+//     if (pointerOne !== null) {
+//       stack.push(pointerOne);
+//       pointerOne = pointerOne.left;
+//     } else {
+//       pointerOne = stack.pop();
+//       res.push(pointerOne.val);
+//       pointerOne = pointerOne.right;
 //     }
+//   }
 
-//     helperFunc(root)
-//     return stack
+//   return res;
+    
+    let result = []
+    
+    const traversalHelper = (node) => {
+        if (node === null) {
+            return
+        }
+        
+        traversalHelper(node.left)
+        result.push(node.val)
+        traversalHelper(node.right)
+        
+        
+    }
+    traversalHelper(root)
+    
+    return result
+    
 };
