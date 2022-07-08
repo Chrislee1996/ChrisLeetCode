@@ -11,31 +11,36 @@
  * @return {number[]}
  */
 var preorderTraversal = function(root) {
-    if (root === null) {
-        return []
-    }
+//     if (root === null) {
+//         return []
+//     }
     
-    let stack = [root]
-    let result = []
-    
-    while (stack.length > 0) {
-        const node = stack.pop()
-        result.push(node.val)
-        
-        if (node.right !==null) stack.push(node.right)
-        if (node.left !== null) stack.push(node.left)
-    }
-    return result
-    
-    
-//     let queue = [root]
 //     let result = []
-//     while(queue.length > 0) {
-//         const node = queue.shift()
+//     let stack = [root]
+    
+//     while (stack.length > 0) {
+//         const node = stack.pop()
 //         result.push(node.val)
         
-//         if (node.left !==null) queue.push(node.left)
-//         if (node.right !==null) queue.push(node.right) 
+//         if (node.right !== null) stack.push(node.right)
+//         if (node.left !== null) stack.push(node.left)
 //     }
 //     return result
-};
+    
+    let result = []
+    
+    const traversalHelper = (node) => {
+        
+        if (node === null) {
+            return
+        }
+        
+        result.push(node.val)
+        traversalHelper(node.left)
+        traversalHelper(node.right)
+        
+        
+    }
+    traversalHelper(root)
+    return result
+}; 
