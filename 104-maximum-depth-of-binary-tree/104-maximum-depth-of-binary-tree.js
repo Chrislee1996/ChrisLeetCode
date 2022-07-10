@@ -13,10 +13,10 @@
 var maxDepth = function(root) {
     if (root === null) {
         return null
-    }
+    }    
     
-    let left = maxDepth(root.left)
-    let right = maxDepth(root.right)
+    let leftTree = maxDepth(root.left)
+    let rightTree = maxDepth(root.right)
     
-    return Math.max(left, right) + 1
+    return Math.max(leftTree, rightTree) + 1
 };
