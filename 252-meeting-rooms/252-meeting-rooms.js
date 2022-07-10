@@ -4,8 +4,10 @@
  */
 var canAttendMeetings = function(intervals) {
     intervals.sort((a,b) =>  a[0] - b[0])
-    for (let i = 0 ; i < intervals.length -1 ;i++) {
-        if (intervals[i][1] > intervals[i+1][0]) {
+    for (let i = 1 ; i < intervals.length ;i++) {
+        const n1 = intervals[i-1][1]
+        const n2 = intervals[i][0]
+        if (n1 > n2) {
             return false
         }
     }
@@ -32,3 +34,14 @@ var canAttendMeetings = function(intervals) {
 //         if (intervals[i].start < intervals[i-1].end) return false;
         
 //     return true;
+
+// 	intervals.sort((a, b) => a[0] - b[0]);
+
+// 	for (let i = 1; i < intervals.length; i++) {
+// 		const [, end1] = intervals[i - 1];
+// 		const [start2] = intervals[i];
+
+// 		if (start2 < end1) return false;
+// 	}
+
+// 	return true;
