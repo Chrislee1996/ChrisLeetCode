@@ -14,7 +14,7 @@ var mergeTwoLists = function(list1, list2) {
     let dummyNode = new ListNode(0)
     let head = dummyNode
     
-    while (list1 !== null && list2 !== null) {
+    while (list1 !==null && list2 !== null) {
         if (list1.val <= list2.val) {
             dummyNode.next = list1
             list1 = list1.next
@@ -25,12 +25,11 @@ var mergeTwoLists = function(list1, list2) {
         dummyNode = dummyNode.next
     }
     
-    if (list1 !==null) {
-        dummyNode.next = list1
-    } else {
+    if (list1 === null) {
         dummyNode.next = list2
+    } else {
+        dummyNode.next = list1
     }
     
     return head.next
-    
 };
