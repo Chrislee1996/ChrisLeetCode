@@ -5,6 +5,13 @@
  */
 var exist = function(board, word) {
 
+        for (let i = 0 ; i < board.length;i++) {
+        for (let j = 0 ; j < board[0].length; j++) {
+            if (board[i][j] === word[0] && dfsHelper(i,j,0)) return true
+        }
+    }
+    return false
+    
     function dfsHelper(row , col , index) {
         if (word.length === index) return true
         
@@ -21,12 +28,7 @@ var exist = function(board, word) {
 
     }
     
-    for (let i = 0 ; i < board.length;i++) {
-        for (let j = 0 ; j < board[0].length; j++) {
-            if (board[i][j] === word[0] && dfsHelper(i,j,0)) return true
-        }
-    }
-    return false
+
 };
 
 
