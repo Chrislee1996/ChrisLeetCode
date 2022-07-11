@@ -19,7 +19,7 @@ var searchMatrix = function(matrix, target) {
 //     return false
     
     
-        for(let i = 0 ; i < matrix.length;i++) {
+    for(let i = 0 ; i < matrix.length;i++) {
     let startPointer = 0
     let endPointer = matrix[0].length-1
         while(startPointer <= endPointer) {
