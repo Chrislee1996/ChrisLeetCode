@@ -8,7 +8,7 @@ var exist = function(board, word) {
     function dfsHelper(row , col , index) {
         if (word.length === index) return true
         
-        if (row < 0 || row >= board.length || col < 0 || col >= board[0].length || board[row][col] !== word[index]) return false
+        if (row < 0 || row >= board.length || col < 0 || col >= board[0].length || board[row][col] !== word[index]) return 
         
         board[row][col] = '#'
         
