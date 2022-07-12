@@ -14,19 +14,19 @@
 var kthSmallest = function(root, k) {
     const stack = []
     let count = 1
-    let node = root
+    // let node = root
     
-    while (stack.length > 0 || node !== null) {
-        while(node !== null) {
-            stack.push(node)
-            node = node.left
+    while (stack.length > 0 || root !== null) {
+        while(root !== null) {
+            stack.push(root)
+            root = root.left
         }
-            node = stack.pop()
+            root = stack.pop()
             if (count === k ) {
-                return node.val
+                return root.val
             } else {
                 count++
             }
-            node = node.right
+            root = root.right
     }
 };
