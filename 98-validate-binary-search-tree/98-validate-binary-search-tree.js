@@ -16,14 +16,14 @@ var isValidBST = function(root) {
     }
     
     
-    const isValidHelper = (root, low , high) => {
-        if (root === null) {
+    const isValidHelper = (node, low , high) => {
+        if (node === null) {
             return true
         }
         
-        return root.val > low && root.val < high &&
-            isValidHelper(root.left, low, root.val) &&
-            isValidHelper(root.right, root.val, high)
+        return node.val > low && node.val < high &&
+            isValidHelper(node.left, low, node.val) &&
+            isValidHelper(node.right, node.val, high)
     }
     
     return isValidHelper(root, -Infinity, Infinity)
