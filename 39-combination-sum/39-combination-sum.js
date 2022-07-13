@@ -6,7 +6,7 @@
 var combinationSum = function(candidates, target) {
         let result = []
     
-    candidates.sort((a,b) => a-b)
+    // candidates.sort((a,b) => a-b)
     
     function dfs (i, candidates, target, combinations) {
         // back tracking case - 
