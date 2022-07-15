@@ -4,28 +4,17 @@
  */
 var eraseOverlapIntervals = function(intervals) {
     intervals.sort((a,b) => a[1] - b[1])
-    let removalCount = 0
-    let endingNumber = intervals[0]
-    for (let i = 1 ; i < intervals.length;i++) {
-        if (intervals[i][0] < endingNumber[1]) {
-            removalCount++
+    let removalCounter = 0 
+    let firstInterval = intervals[0]
+    for (let i = 1 ; i < intervals.length ; i++) {
+        if (firstInterval[1] > intervals[i][0]) {
+            removalCounter++
         } else {
-            endingNumber = intervals[i]
+            firstInterval = intervals[i]
         }
     }
-    return removalCount
+    return removalCounter
 };
 
-
-
-
-	// sort by earliest finish time
-//     intervals.sort((a, b) => a[1] - b[1]);
-//     let prev = intervals[0], remove = 0;
-    
-//     for(let i = 1; i < intervals.length; i++) {
-//         if(intervals[i][0] < prev[1]) remove++;
-//         else prev = intervals[i];
-//     }
-//     return remove;
-// };
+// [[1,2],[2,3],[1,3], [3,4]]
+//           F   I
