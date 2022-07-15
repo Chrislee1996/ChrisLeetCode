@@ -4,29 +4,48 @@
  * @return {number[][]}
  */
 var combinationSum = function(candidates, target) {
-        let result = []
+    let result = []
     
-    // candidates.sort((a,b) => a-b)
-    
-    function dfs (i, candidates, target, combinations) {
-        // back tracking case - 
+    function dfsHelper(candidates, target, i,  combinations) {
+        //base case
         if (target < 0) return
         
-        //base case
-        if (target === 0) {
+        if (target === 0 ) {
             result.push(combinations.slice())
             return
         }
         
-        
-        //dfs recursive call
-        for (let j = i ; j < candidates.length ; j++) {
+        for (let j = i ; j < candidates.length; j++) {
             combinations.push(candidates[j])
-            dfs(j, candidates, target - candidates[j] , combinations)
+            dfsHelper(candidates, target - candidates[j] ,j, combinations)
             combinations.pop()
         }
+        
     }
-    
-    dfs(0, candidates,target, [])
+    dfsHelper(candidates,target, 0, [])
     return result
 };
+
+
+// var combinationSum = function(candidates, target) {
+//     let result = []
+    
+//     function dfsHelper(candidates, target, i,  combinations) {
+//         //base case
+//         if (target < 0) return
+        
+//         if (target === 0 ) {
+//             result.push(combinations.slice())
+//             return
+//         }
+        
+//         for (let j = i ; j < candidates.length; j++) {
+//             combinations.push(candidates[j])
+//             dfsHelper(candidates, target - candidates[j] ,j, combinations)
+//             combinations.pop()
+//         }
+        
+//     }
+//     dfsHelper(candidates,target, 0, [])
+//     return result
+// };
