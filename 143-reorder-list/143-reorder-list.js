@@ -13,67 +13,42 @@ var reorderList = function(head) {
     let slowPointer = head
     let fastPointer = head
     
-    while(fastPointer !== null && fastPointer.next !== null) {
+    while (fastPointer !== null && fastPointer.next !== null) {
         slowPointer = slowPointer.next
         fastPointer = fastPointer.next.next
     }
     
+    
     let previousNode = null
     let currentNode = slowPointer
-    while(currentNode !== null) {
+    while (currentNode !== null) {
         let next = currentNode.next
-        currentNode.next = previousNode
+         currentNode.next = previousNode
         previousNode = currentNode
         currentNode = next
     }
-
-    let firstPointer = head
-    let secondPointer = previousNode
     
-    while(secondPointer.next !== null) {
-        temp = firstPointer.next
-        firstPointer.next = secondPointer
-        firstPointer = temp
+    let leftPointer = head
+    let rightPointer = previousNode
+    
+    while (rightPointer.next !== null) {
         
-        temp = secondPointer.next
-        secondPointer.next = firstPointer
-        secondPointer = temp
+        
+        let tempOne = leftPointer.next
+        leftPointer.next = rightPointer
+        leftPointer = tempOne
+        
+        let tempTwo = rightPointer.next
+        rightPointer.next = leftPointer
+        rightPointer = tempTwo
     }
-
 };
 
-//  if (!head) { return };
+
+
+// [1,2,3,4,5]
+//      S
+//          F
     
-//     let slow = head;
-//     let fast = head;
-    
-    
-//     // finding the middle of the linked list using 2 pters
-//     while (fast && fast.next) {
-//         slow = slow.next;
-//         fast = fast.next.next;
-//     }
-    
-//     // reverse the second part of the list starting at slow
-//     let prev = null
-//     let curr = slow; 
-//     while (curr) {
-//         let next = curr.next;
-//         curr.next = prev;
-//         prev = curr;
-//         curr = next;
-//     } // here prev is the head 
-    
-//     // merge two sorted lists (first one starts at head, second at prev)
-//     let first = head;
-//     let second = prev;
-    
-//     while(second.next) {
-//         temp = first.next;
-//         first.next = second;
-//         first = temp;
-        
-//         temp = second.next;
-//         second.next = first;
-//         second = temp;
-//     }
+//     1 - > 2      N <- 3 <- 4 <- 5
+    // L                           R
