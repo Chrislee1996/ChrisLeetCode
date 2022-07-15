@@ -13,27 +13,16 @@
  */
 var isSubtree = function(root, subRoot) {
     if (root === null) return false
-    if(sameTree(root, subRoot)) return true
+    if (isSameTree(root, subRoot)) return true
     return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
-};
-
-function sameTree(root , subRoot) {
-    if (root === null && subRoot === null) return true
-    if (root === null || subRoot === null) return false
-    if (root.val != subRoot.val) return false
-    return sameTree(root.left, subRoot.left) && sameTree(root.right, subRoot.right)
 } 
 
+const isSameTree = (root, subRoot) => {
+    if (root === null && subRoot === null) return true
+    if (root === null || subRoot === null) return false
+    if (root.val !== subRoot.val) return false
+    
+    return isSameTree(root.left, subRoot.left) && isSameTree(root.right, subRoot.right)
+}
 
-// var isSubtree = function(root, subRoot) {
-//     if(root == null)    return false;
-//     if(same(root,subRoot))  return true;
-//     return isSubtree(root.left,subRoot) || isSubtree(root.right,subRoot);
-// };
 
-// function same(root,subRoot){
-//     if(root == null && subRoot == null) return true;
-//     if(root == null || subRoot == null) return false;
-//     if(root.val != subRoot.val) return false;
-//     return same(root.left,subRoot.left) && same(root.right,subRoot.right);
-// }
