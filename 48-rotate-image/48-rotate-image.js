@@ -11,11 +11,14 @@ var rotate = function(matrix) {
         }
     }
     
-    for (let i = 0 ; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[0].length/2 ; j++) {
-            let temp = matrix[i][j]
-            matrix[i][j] = matrix[i][matrix.length-j-1]
-            matrix[i][matrix.length-j-1] = temp
-        }
+    // for (let i = 0 ; i < matrix.length; i++) {
+    //     for (let j = 0; j < matrix[0].length/2 ; j++) {
+    //         let temp = matrix[i][j]
+    //         matrix[i][j] = matrix[i][matrix.length-j-1]
+    //         matrix[i][matrix.length-j-1] = temp
+    //     }
+    // }
+    for (let row of matrix){
+        row.reverse()
     }
 };
