@@ -3,18 +3,19 @@
  * @return {number}
  */
 var minMeetingRooms = function(intervals) {
-    let starts = intervals.map(interval => interval[0]);
-    let ends = intervals.map(interval => interval[1]);
-    starts.sort((a,b) => a-b);
-    ends.sort((a,b) => a-b);
-    let count = 0, j = 0;
-    for (let i = 0; i < starts.length; i++) {
-        count++;
-        // a meeting ended and its room became available
-        if (starts[i] >= ends[j]) {
-            count--;
-            j++
+    if (!intervals || intervals.length < 1) {
+        return 0;
+    }
+    let rooms = 0;
+    let end = 0;
+    const starts = intervals.map(a => a[0]).sort((a, b) => a-b);
+    const ends = intervals.map(a => a[1]).sort((a, b) => a-b);
+    for(let i=0; i < intervals.length; i++) {
+        if(starts[i] < ends[end]) {
+            rooms++;
+        } else {
+            end++;
         }
     }
-    return count;
+    return rooms;
 };
