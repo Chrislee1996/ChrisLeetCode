@@ -9,6 +9,7 @@ var minMeetingRooms = function(intervals) {
     let endTime = intervals.map(a => a[1]).sort((a,b) => a-b)
     for (let i = 0 ; i < intervals.length;i++) {
         if (startTime[i] < endTime[endingRooms]) {
+            console.log(endTime[endingRooms])
             numberOfRooms++
         } else {
             endingRooms++
