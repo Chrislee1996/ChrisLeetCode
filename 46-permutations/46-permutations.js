@@ -4,19 +4,18 @@
  */
 var permute = function(nums) {
     if (nums.length === 0 ) return [[]]
+    let result = []
     
     let firstNumber = nums[0]
-    let rest = nums.slice(1)
+    let otherNumbers = nums.slice(1)
     
-    const permuteWithoutFirst = permute(rest)
+    let allOtherNumbers = permute(otherNumbers)
     
-    const allPermutations = []
-    
-    for (let perm of permuteWithoutFirst) {
-        for (let i = 0 ; i <= perm.length;i++) {
-            let permWithFirst = [...perm.slice(0, i ), firstNumber, ...perm.slice(i)]
-            allPermutations.push(permWithFirst)
+    for (let numbers of allOtherNumbers) {
+        for (let i = 0 ; i <= numbers.length ; i++) {
+            let allNumbers = [...numbers.slice(0,i), firstNumber, ...numbers.slice(i)]
+            result.push(allNumbers)
         }
     }
-    return allPermutations
+    return result
 };
