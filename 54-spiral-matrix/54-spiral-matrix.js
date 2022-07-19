@@ -3,70 +3,36 @@
  * @return {number[]}
  */
 var spiralOrder = function(matrix) {
+    let top = 0 
+    let left = 0
+    let right = matrix[0].length-1
+    let bottom = matrix.length-1
     let result = []
+    let size = matrix.length * matrix[0].length
     
-    let startingRow = 0
-    let startingCol = 0
-    let endRow = matrix.length-1
-    let endCol = matrix[0].length-1
-    
-    while(result.length < matrix.length * matrix[0].length) {  //matrix*matrix[0] counts the number of cells
-        
-        for (let col = startingCol; col <= endCol; col++) {
-            result.push(matrix[startingRow][col])
+    while (result.length < size) {
+        for (let i = left; i <= right && result.length < size; i++) {
+            result.push(matrix[top][i])
         }
+        top++
         
-        for (let row = startingRow + 1; row <= endRow; row++) {
-            result.push(matrix[row][endCol])
+        for (let i = top ; i <= bottom && result.length < size ;i++) {
+            result.push(matrix[i][right])
         }
+        right--
         
-        for (let col = endCol - 1; col >= startingCol; col--) {
-            if (startingRow === endRow) break
-            result.push(matrix[endRow][col])
+        for (let i = right ; i >= left && result.length < size ; i--) {
+            result.push(matrix[bottom][i])
         }
+        bottom--
         
-        for (let row = endRow- 1; row >= startingRow + 1; row--) {
-            if (startingCol === endCol) break
-            result.push(matrix[row][startingCol])
+        for (let i = bottom; i >= top && result.length < size ; i--) {
+            result.push(matrix[i][left])
         }
-        startingRow++
-        startingCol++
-        endRow--
-        endCol--
+        left++
         
     }
+    
     return result
+    
 };
-
-
-
-// const results = []
-//     let startRow = 0, startCol = 0, endRow = matrix.length-1, endCol = matrix[0].length-1;
-    
-//     while(results.length < matrix.length * matrix[0].length) {
-        
-//         for(let col = startCol; col <= endCol; col++ ) {
-//             results.push(matrix[startRow][col])
-//         }
-        
-//         for(let row = startRow + 1; row <= endRow; row++) {
-//             results.push(matrix[row][endCol])
-//         }
-        
-//         for(let col = endCol - 1; col >= startCol; col--) {
-//             if(startRow === endRow) break;
-//             results.push(matrix[endRow][col])
-//         }
-        
-//         for(let row = endRow - 1; row >= startRow + 1; row--) {
-//             if(endCol === startCol) break;
-//             results.push(matrix[row][startCol])
-//         }
-        
-//         startRow++
-//         startCol++
-//         endRow--
-//         endCol--
-//     }
-    
-//     return results
