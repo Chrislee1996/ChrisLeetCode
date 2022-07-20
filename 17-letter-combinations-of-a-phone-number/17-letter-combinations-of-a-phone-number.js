@@ -15,11 +15,10 @@ var letterCombinations = function(digits) {
         '9' : 'wxyz'
     }
     
-    if (digits.length === 0) return result
-    
-    
-    function dfsHelper(digits, idx, combinations) {
-        if (idx === digits.length) {
+    function dfsHelper(digits, idx , combinations) {
+        if (digits.length === 0) return
+        
+        if (digits.length === idx) {
             result.push(combinations.join(''))
             return
         }
@@ -28,10 +27,13 @@ var letterCombinations = function(digits) {
         
         for (let char of chars) {
             combinations.push(char)
-            dfsHelper(digits, idx + 1 , combinations)
+            dfsHelper(digits, idx+1 , combinations)
             combinations.pop()
         }
+        
     }
+    
+
     
     dfsHelper(digits, 0 , [])
     return result
