@@ -9,10 +9,10 @@ var numJewelsInStones = function(jewels, stones) {
     
     for (let jewel of jewels) {
         if (!hashmap[jewel]) {
-            hashmap[jewel] = 1
+            hashmap[jewel] = true
         } 
     }
-    
+    console.log(hashmap)
     for (let stone of stones) {
         if (hashmap[stone]) {
             count++
