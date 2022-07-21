@@ -3,14 +3,13 @@
  * @return {number[]}
  */
 var sortArrayByParity = function(nums) {
-    let oddIdx = 0;
+    let oddIndex = 0
     
-    for (let i = 0; i < nums.length; i++) {
+    for (let i = 0 ; i < nums.length ; i++) {
         if (nums[i] % 2 === 0) {
-            [nums[i], nums[oddIdx]] = [nums[oddIdx], nums[i]];
-            oddIdx++;
+            [nums[oddIndex], nums[i]] = [nums[i], nums[oddIndex]]
+            oddIndex++
         }
     }
-    
-    return nums;
+    return nums
 };
