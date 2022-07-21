@@ -3,11 +3,11 @@
  * @return {number}
  */
 var longestConsecutive = function(nums) {
-    let set = new Set()
+    let set = new Set(nums)
     
-    for (let num of nums) {
-        set.add(num)
-    }
+    // for (let num of nums) {
+    //     set.add(num)
+    // }
     
     let longestStreak = 0
     
