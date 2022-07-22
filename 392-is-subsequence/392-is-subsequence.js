@@ -9,8 +9,10 @@ var isSubsequence = function(s, t) {
     while (pointerS < s.length && pointerT < t.length) {
         if (s[pointerS] == t[pointerT]) {
             pointerS++
-        }
             pointerT++
+        } else {
+            pointerT++
+        }
     }
     return pointerS == s.length
 };
