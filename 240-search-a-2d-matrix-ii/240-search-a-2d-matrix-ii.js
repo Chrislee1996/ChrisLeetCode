@@ -4,37 +4,23 @@
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
-//     let row = 0 
-//     let col = matrix[0].length-1
-    
-//     while (row < matrix.length && col >= 0) {
-//         if (matrix[row][col] === target) {
-//             return true
-//         } else if (matrix[row][col] > target) {
-//             col--
-//         } else {
-//             row ++
-//         }
-//     }
-//     return false
-    
-    
-    for(let i = 0 ; i < matrix.length;i++) {
-    let startPointer = 0
-    let endPointer = matrix[0].length-1
-        while(startPointer <= endPointer) {
-            let middle = Math.floor((startPointer + endPointer)/ 2) 
-            if (matrix[i][middle] === target) {
-                return true
-            } else if (matrix[i][middle] > target) {
-                endPointer = middle - 1
-            } else {
-                startPointer = middle + 1
+
+    for(let i = 0 ; i < matrix.length; i++) {
+        let firstPointer = 0
+        let endPointer = matrix[0].length-1
+        while(firstPointer <= endPointer) {
+        let middlePointer = Math.floor((firstPointer + endPointer)/2) 
+        if (matrix[i][middlePointer] === target) {
+            return true
+        } else if (matrix[i][middlePointer] < target) {
+            firstPointer = middlePointer + 1
+        } else {
+            endPointer = middlePointer - 1
             }
         }
     }
-    return false
-};
+        return false
+}; 
 
 
 
@@ -43,18 +29,3 @@ var searchMatrix = function(matrix, target) {
 
     
     
-    // for(let i = 0 ; i < matrix.length;i++) {
-    // let startPointer = 0
-    // let endPointer = matrix[0].length-1
-    //     while(startPointer <= endPointer) {
-    //         let middle = Math.floor((startPointer + endPointer)/ 2) 
-    //         if (matrix[i][middle] === target) {
-    //             return true
-    //         } else if (matrix[i][middle] > target) {
-    //             endPointer = middle - 1
-    //         } else {
-    //             startPointer = middle + 1
-    //         }
-    //     }
-    // }
-    // return false
