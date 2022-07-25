@@ -9,7 +9,7 @@ var topKFrequent = function(nums, k) {
     const result = []
     
     for (let num of nums) {
-        map.set(num, (map.get(num) || 0) + 1)
+        map.set(num, (map.get(num) + 1) || 1)
     }
     
     for (let [num, freq] of map) {
