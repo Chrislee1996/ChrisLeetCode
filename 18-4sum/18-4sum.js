@@ -12,9 +12,9 @@ var fourSum = function(nums, target) {
         for (let j = i + 1; j < nums.length; j++) {
             let leftPointer = j + 1
             let rightPointer = nums.length-1
-             if (nums[i] === nums[i - 1]) {
-            continue 
-        }
+            
+            if (nums[i] === nums[i - 1]) continue 
+
             
             while (leftPointer < rightPointer) {
                 const sum = nums[i] + nums[j] + nums[leftPointer] + nums[rightPointer]
