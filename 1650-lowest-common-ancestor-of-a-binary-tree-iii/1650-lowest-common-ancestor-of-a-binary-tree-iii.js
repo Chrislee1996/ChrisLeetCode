@@ -13,12 +13,10 @@
  * @return {Node}
  */
 var lowestCommonAncestor = function(p, q) {
-    if(p == q) 
-    return p;
     
     let pointerP = p;
     let pointerQ = q;
-    
+
     while(pointerP != pointerQ) {
        
         pointerP = pointerP.parent;
