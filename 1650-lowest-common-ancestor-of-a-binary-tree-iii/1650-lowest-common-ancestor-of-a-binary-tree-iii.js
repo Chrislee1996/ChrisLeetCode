@@ -14,21 +14,40 @@
  */
 var lowestCommonAncestor = function(p, q) {
     
-    let pointerP = p;
-    let pointerQ = q;
+//     let pointerP = p;
+//     let pointerQ = q;
 
-    while(pointerP != pointerQ) {
+//     while(pointerP != pointerQ) {
        
-        pointerP = pointerP.parent;
-        pointerQ = pointerQ.parent;
+//         pointerP = pointerP.parent;
+//         pointerQ = pointerQ.parent;
       
-        if(pointerP == null) 
-			pointerP = q;
-        if(pointerQ == null) 
-			pointerQ = p;
+//         if(pointerP == null) 
+// 			pointerP = q;
+//         if(pointerQ == null) 
+// 			pointerQ = p;
         
-        if(pointerP == pointerQ) 
-			return pointerP;
-    }
+//         if(pointerP == pointerQ) 
+// 			return pointerP;
+//     }
+    
+    
+    let parents = new Set();
+    let node = p;
+    while(node !== null)
+        {
+            parents.add(node);
+            node = node.parent;
+        }
+    node = q;
+    while(node !== null)
+        {
+            if(parents.has(node))
+            {
+                return node;
+            }
+            node = node.parent;
+        }
+    // return node;
     
 };
