@@ -12,7 +12,7 @@
  * @return {TreeNode}
  */
 var lowestCommonAncestor = function(root, p, q) {
-    if (root === null) return null
+    if (root === null) return 
     
     if (root === p || root === q) return root 
     
@@ -32,8 +32,8 @@ var lowestCommonAncestor = function(root, p, q) {
  //    if (!right) return left  // p and q are in the left subtree
  //    return root        
 
-//base case for recur for checking null cases
-//if at any time our p or q equals the root we return the root
-//traverse through our left and right side
-//if we do not have a left we return right and viceversa
-//return root
+//base case  - if we reach null return null
+//if at any time during our traversal we find that our root equals p or q we will return it back to our call stack
+//traverse the left and right 
+//if we find that our left OR right is null we will return the non null side
+//return the root
