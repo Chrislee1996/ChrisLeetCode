@@ -17,12 +17,13 @@ var getLonelyNodes = function(root) {
     const dfs = (node) => {
         if (node === null) return 
     
-        if (node.left === null && node.right) result.push(node.right.val)
-        if (node.right === null && node.left) result.push(node.left.val)
         
         dfs(node.left)
-        dfs(node.right)
         
+        if (node.left === null && node.right) result.push(node.right.val)
+        dfs(node.right)
+                if (node.right === null && node.left) result.push(node.left.val)
+
     }
     
     
