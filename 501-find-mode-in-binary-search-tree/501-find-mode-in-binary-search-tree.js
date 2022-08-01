@@ -33,6 +33,9 @@ var findMode = function(root) {
     }
     
     dfs(root)
-    Object.keys(hashmap).forEach(modeValue => {if(hashmap[modeValue] == compareValue) mode.push(modeValue)});
+    // Object.keys(hashmap).forEach(modeValue => {if(hashmap[modeValue] == compareValue) mode.push(modeValue)});
+    for (let values in hashmap) {
+        if (hashmap[values] == compareValue) mode.push(values)
+    }
     return mode
 };
