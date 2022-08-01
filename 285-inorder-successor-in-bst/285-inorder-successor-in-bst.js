@@ -14,6 +14,7 @@ var inorderSuccessor = function(root, p) {
     let successor = null
     
     const search = (node) => {
+
         if (node === null) return null
         if (p.val >= node.val) {
             search(node.right)
@@ -21,6 +22,7 @@ var inorderSuccessor = function(root, p) {
             successor = node
             search(node.left)
         }
+
     }
     search(root)
     return successor
