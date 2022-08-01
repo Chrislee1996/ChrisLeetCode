@@ -11,23 +11,15 @@
  * @return {boolean}
  */
 var isSymmetric = function(root) {
-    if (root === null) {
-        return true
+  if (root === null) return true
+    
+    const dfs = (tree1, tree2) => {
+        if (tree1 === null || tree2 === null) return tree1 === tree2
+        
+        if (tree1.val !== tree2.val) return false
+        
+        return dfs(tree1.left, tree2.right) && dfs(tree1.right, tree2.left)
     }
     
-    
-    const isMirror = (tree1, tree2) => {
-        if (tree1 === null || tree2 === null) {
-            return tree1 === tree2
-        }
-        
-        if (tree1.val !== tree2.val) {
-            return false
-        }
-        
-        return isMirror(tree1.left, tree2.right) && isMirror (tree1.right, tree2.left)
-    }
-    
-    return isMirror(root.left, root.right)
-    
+    return dfs(root.left, root.right)
 };
