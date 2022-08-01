@@ -19,10 +19,11 @@ var getLonelyNodes = function(root) {
     
         
         dfs(node.left)
-        
-        if (node.left === null && node.right) result.push(node.right.val)
-        dfs(node.right)
                 if (node.right === null && node.left) result.push(node.left.val)
+
+        
+        dfs(node.right)
+        if (node.left === null && node.right) result.push(node.right.val)
 
     }
     
