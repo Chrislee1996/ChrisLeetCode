@@ -13,47 +13,16 @@
  */
 var closestValue = function(root, target) {
     
-    let closestDifference = Infinity
-    let closestValue = 0
-    
-    const search = (node) => {
-        if (!node) return
-        
-        if (Math.abs(node.val - target) < closestDifference) {
-            closestDifference = Math.abs(node.val - target)
-            closestValue = node.val 
-        }
-        
-        if (target < node.val) {
-            search(node.left)    
-        } else {
-            search(node.right)
-        }
+    let closest = -Infinity
+    const helper = (node, target) =>{
+        if(!node) return closest
+        if(Math.abs(target - node.val) < Math.abs(target - closest)) closest = node.val
+        if(node.val > target) return helper(node.left, target, closest)
+        else return helper(node.right, target, closest)
+        return closest
     }
-
-    search(root)
-    return closestValue
+    return helper(root, target)
 };
 
-//     let closestDiff = Infinity;
-//     let closestVal = Infinity;
-    
-//     const search = (node) => {
-//         if (!node) return;
-        
-//         if (Math.abs(node.val - target) < closestDiff) {
-//             closestDiff = Math.abs(node.val - target);
-//             closestVal = node.val;
-//         }
-        
-//         if (target < node.val) {
-//             search(node.left);
-//         }
-//         else {
-//             search(node.right);
-//         }
-//     }
-    
-//     search(root);
-    
-//     return closestVal;
+
+
