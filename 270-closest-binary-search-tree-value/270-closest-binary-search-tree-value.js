@@ -20,7 +20,7 @@ var closestValue = function(root, target) {
         
         if(Math.abs(target - node.val) < Math.abs(target - closest)) closest = node.val
         
-        if(node.val > target) return helper(node.left, target, closest)
+        if(node.val > target) helper(node.left, target, closest)
         if(node.val < target) helper(node.right, target, closest)
         
         return closest
