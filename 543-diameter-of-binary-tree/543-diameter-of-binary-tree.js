@@ -20,9 +20,9 @@ var diameterOfBinaryTree = function(root) {
         if (node === null) {
             return 0
         }
-        
+                let rightSide = dfs(node.right)
+
         let leftSide = dfs(node.left)
-        let rightSide = dfs(node.right)
         
         max =  Math.max(leftSide + rightSide, max)
         return Math.max(leftSide, rightSide) + 1
@@ -31,3 +31,10 @@ var diameterOfBinaryTree = function(root) {
     dfs(root)
     return max
 }; 
+
+//create base case of reaching a null node 
+//assing a max var. to keep track of our max dia
+// recur call the left and right side to traverse 
+// keep track of our max with - leftS + rightS
+//return the max of whatever side 
+// return with +1 due to needing to account for parent nodes
