@@ -36,3 +36,6 @@ var lowestCommonAncestor = function(root, p, q) {
 
     return root
 };
+
+//Common bst - if p and q are greater than our root then check right - visversa for right side
+//return root
