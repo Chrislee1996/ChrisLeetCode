@@ -16,8 +16,8 @@ var romanToInt = function(s) {
     }
     
     for (let i = 0 ; i < s.length;i++) {
-        let currentValue = romamNumbers[s.charAt(i)]
-        let nextValue = romamNumbers[s.charAt(i + 1)]
+        let currentValue = romamNumbers[s[i]]
+        let nextValue = romamNumbers[s[i + 1]]
         
         if (nextValue) {
             if (currentValue >= nextValue) {
@@ -33,13 +33,13 @@ var romanToInt = function(s) {
     return total
 };
 
-// M C M X C I V
+// M C M X C V I
 //             i 1
 
-//1000 > 100?
-//100 > 1000?
+//1000 > 100? Yes so we add 1000
+//100 > 1000? No so we subtract
 //10 > 100? 
-//1 > 4
+//5 > 1
 
 //total = 1000 + 900 + 90 + 4
 //1994
